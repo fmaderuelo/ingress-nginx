@@ -61,7 +61,7 @@ controller:
 
   ## Name of the ingress class to route through this controller
   ##
-  ingressClass: nginx
+  ingressClass: metallb-31
 
   # labels to add to the pod container metadata
   podLabels: {}
@@ -117,7 +117,8 @@ controller:
   ## E.g. to specify the default SSL certificate you can use
   ## extraArgs:
   ##   default-ssl-certificate: "<namespace>/<secret_name>"
-  extraArgs: {}
+  extraArgs:
+    enable-ssl-passthrough: "true"
 
   ## Additional environment variables to set
   extraEnvs: []
